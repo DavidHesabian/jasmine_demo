@@ -1,6 +1,6 @@
 function Thermostat(temprature) {
-  
-  
+
+
   // this.currentTemprature
   // this.powersaving_mode = 
 
@@ -11,7 +11,7 @@ function Thermostat(temprature) {
 };
 
 Thermostat.prototype.has = function(temprature) {
-	return this.temprature();
+	return (temprature);
 };
 
 // Thermostat.prototype.has = function(increase temprature) {

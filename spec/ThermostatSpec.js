@@ -10,6 +10,10 @@ describe ('Thermostat', function() {
 		it('starts at 20 degrees', function() {
 			expect(thermostat.has(20)).toBe(20)
 		});
+
+    it('', function() {
+      expect( ()).toBe ()
+    }); 
 	});
 
   describe('thermostat increase temprature with 1', function() {
