@@ -1,3 +1,6 @@
+
+
+
 //var thermostat = new Thermostat();
 //
 //    function updateThermostatDisplay() {

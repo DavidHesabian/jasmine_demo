@@ -17,7 +17,7 @@ describe('Thermostat', function () {
         });
 
         it('is subtract 1 degrees to get 19', function () {
-            thermostat.sub(1);
+            thermostat.decreaseTemperature(1);
             expect(thermostat.temperature).toEqual(19);
         });
     });
@@ -77,4 +77,24 @@ describe('Thermostat', function () {
             ).toThrowError("No can do!");
         });
     });
+
+    describe('Colour status', function () {
+
+        it('display green if less than 18', function () {
+            thermostat.temperature = 16;
+            expect(thermostat.colorStatus()).toEqual("Green");
+        });
+
+        it('display yellow if less 25', function () {
+            thermostat.temperature = 22;
+            expect(thermostat.colorStatus()).toEqual("Yellow");
+        });
+
+        it('display red if less 32', function () {
+            thermostat.temperature = 28;
+            expect(thermostat.colorStatus()).toEqual("Red")
+        });
+
+    });
+
 });
