@@ -77,6 +77,14 @@ describe('Thermostat', function () {
             ).toThrowError("No can do!");
         });
 
+        it('thermostat can not be decreased below 10 degrees', function () {
+            thermostat.temperature = 10;
+            expect(function () {
+                    thermostat.decreaseTemperature(1);
+                }
+            ).toThrowError("No can do!");
+        });
+
         it('resets temperature to 25 if temperature is 30 degrees and power saving mode is turned on', function () {
             thermostat.powerSavingMode = false;
             thermostat.temperature = 30;
