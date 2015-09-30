@@ -22,7 +22,7 @@ $(document).ready(function () {
         thermostat.powerSavingMode = $(this).prop('checked');
     });
 
-    $('#reseting').click(function () {
+    $('#reset').click(function () {
         $('#change_mode').prop('checked', true);
         thermostat.reset();
         updateDisplay();
