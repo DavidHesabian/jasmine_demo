@@ -76,25 +76,37 @@ describe('Thermostat', function () {
                 }
             ).toThrowError("No can do!");
         });
+
+        it('resets temperature to 25 if temperature is 30 degrees and power saving mode is turned on', function () {
+            thermostat.powerSavingMode = false;
+            thermostat.temperature = 30;
+            thermostat.changePowerSavingMode(true);
+            expect(thermostat.temperature).toEqual(25);
+        });
+
+        it('resets temperature to 25 if temperature is 22 degrees and power saving mode is turned on', function () {
+            thermostat.powerSavingMode = false;
+            thermostat.temperature = 22;
+            thermostat.changePowerSavingMode(true);
+            expect(thermostat.temperature).toEqual(22);
+        });
     });
 
-    describe('Colour status', function () {
+    describe('color status', function () {
 
         it('display green if less than 18', function () {
             thermostat.temperature = 16;
             expect(thermostat.colorStatus()).toEqual("Green");
         });
 
-        it('display yellow if less 25', function () {
+        it('display orange if less 25', function () {
             thermostat.temperature = 22;
-            expect(thermostat.colorStatus()).toEqual("Yellow");
+            expect(thermostat.colorStatus()).toEqual("Orange");
         });
 
         it('display red if less 32', function () {
             thermostat.temperature = 28;
             expect(thermostat.colorStatus()).toEqual("Red")
         });
-
     });
-
 });

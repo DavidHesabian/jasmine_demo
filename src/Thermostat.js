@@ -25,16 +25,22 @@ Thermostat.prototype.maxTemp = function () {
 
 Thermostat.prototype.changePowerSavingMode = function (boolean) {
     this.powerSavingMode = boolean;
+    if (this.temperature > this.maxTemp()) {
+        this.temperature = this.maxTemp();
+    }
 };
 
-//Thermostat.prototype.colorStatus = function () {
-//   if (this.temperature > 18) {
-//       return "Green"
-//    }
-//
-//    else if ()
-//
-//};
+Thermostat.prototype.colorStatus = function () {
+    if (this.temperature < 18) {
+        return "Green";
+    }
+    else if (this.temperature <= 25) {
+        return "Orange";
+    }
+    else {
+        return "Red";
+    }
+};
 
 
 
