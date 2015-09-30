@@ -1,17 +1,14 @@
-describe('Thermostat', function () {
+describe('ThermostatUI', function () {
 
-    it('', function(){
+    beforeEach(function () {
+        jasmine.getFixtures().fixturesPath = '.';
+        loadFixtures('index.html');
+        $.holdReady(false);
+    })
 
-
-    });
-
-    it('', function(){
-
-
-    });
-
-    it('', function(){
-
+    it('update current temp with current temp', function () {
+        expect('#current').toContainText(20)
 
     });
-};
+
+});

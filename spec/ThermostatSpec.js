@@ -22,7 +22,6 @@ describe('Thermostat', function () {
         });
     });
 
-
     describe('power saving mode', function () {
 
         it('is tuned on by default', function () {
