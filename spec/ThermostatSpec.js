@@ -24,7 +24,7 @@ describe('Thermostat', function () {
 
     describe('power saving mode', function () {
 
-        it('is tuned on by default', function () {
+        it('is turned on by default', function () {
             expect(thermostat.powerSavingMode).toEqual(true)
         });
 
@@ -82,6 +82,12 @@ describe('Thermostat', function () {
                     thermostat.decreaseTemperature(1);
                 }
             ).toThrowError("No can do!");
+        });
+
+        it('reset button resets temperature to 20 degrees and the power saving mode to on', function () {
+            thermostat.reset()
+            expect(thermostat.powerSavingMode).toEqual(true);
+            expect(thermostat.temperature).toEqual(20);
         });
 
         it('resets temperature to 25 if temperature is 30 degrees and power saving mode is turned on', function () {

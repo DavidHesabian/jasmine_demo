@@ -12,7 +12,7 @@ Thermostat.prototype.increaseTemperature = function (value) {
 };
 
 Thermostat.prototype.decreaseTemperature = function (value) {
-    if (this.temperature > this.minTemperature()) {
+    if (this.temperature > this.minTemp()) {
         this.temperature = this.temperature - value;
     } else {
         throw new Error('No can do!')
@@ -28,13 +28,18 @@ Thermostat.prototype.maxTemp = function () {
     }
 };
 
-Thermostat.prototype.minTemperature = function (){
-  return 10;
+Thermostat.prototype.minTemp = function () {
+    return 10;
 };
 
 Thermostat.prototype.changePowerSavingMode = function (boolean) {
     this.powerSavingMode = boolean;
     this.resetTemperatureToMax();
+};
+
+Thermostat.prototype.reset = function () {
+    this.powerSavingMode = true;
+    this.temperature = 20;
 };
 
 Thermostat.prototype.resetTemperatureToMax = function () {
