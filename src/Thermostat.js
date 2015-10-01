@@ -59,11 +59,3 @@ Thermostat.prototype.colorStatus = function () {
         return "Red";
     }
 };
-
-
-
-
-
-
-
-
