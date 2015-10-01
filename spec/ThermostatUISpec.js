@@ -20,6 +20,11 @@ describe('ThermostatUI', function () {
         expect('#temperature').toContainText('19')
     });
 
+    it('power saving mode on by default', function () {
+        $('#change_mode').click();
+        expect(thermostat.powerSavingMode).toBeChecked();
+    });
+
     it('reset button resets temperature to 20 degrees and the power saving mode to on', function () {
         $('#reset').click();
         expect(thermostat.powerSavingMode).toEqual(true);
