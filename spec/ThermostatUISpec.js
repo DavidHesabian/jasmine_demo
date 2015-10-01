@@ -40,3 +40,11 @@ describe('ThermostatUI', function () {
         expect('#temperature').toContainText('25');
     });
 });
+
+describe('set temperature to specific city', function() {
+
+    it('set temperature to 21 degrees on gothenburg', function () {
+        $('#gothenburg_se').click();
+        expect('#temperature').toContainText('21');
+    });
+});

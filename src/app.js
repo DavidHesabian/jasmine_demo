@@ -29,4 +29,10 @@ $(document).ready(function () {
         thermostat.reset();
         updateDisplay();
     });
+
+    $('#gothenburg_se').click(function () {
+        $('#temperature').prop('Göteborg', true);
+        thermostat.reset();
+        updateDisplay();
+    });
 });
