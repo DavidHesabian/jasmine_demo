@@ -21,7 +21,6 @@ describe('ThermostatUI', function () {
     });
 
     it('power saving mode on by default', function () {
-        //$('#change_mode').click();
         expect($('#change_mode')).toBeChecked();
     });
 
