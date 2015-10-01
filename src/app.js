@@ -18,10 +18,6 @@ $(document).ready(function () {
         updateDisplay();
     });
 
-    $('#change_mode').on('change', function () {
-        thermostat.powerSavingMode = $(this).prop('checked');
-    });
-
     $('#reset').click(function () {
         $('#change_mode').prop('checked', true);
         thermostat.reset();
