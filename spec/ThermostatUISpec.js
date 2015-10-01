@@ -29,4 +29,14 @@ describe('ThermostatUI', function () {
         expect(thermostat.powerSavingMode).toEqual(true);
         expect(thermostat.temperature).toEqual(20);
     });
+
+    it('power saving mode turn on reset to 25', function () {
+        $('#change_mode').attr('checked', false);
+        thermostat.powerSavingMode = false;
+        thermostat.temperature = 32;
+        $('#change_mode').each(function () {
+            $(this).prop('checked', status).click();
+        });
+        expect('#temperature').toContainText('25');
+    });
 });
