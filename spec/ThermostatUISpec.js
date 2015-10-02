@@ -47,6 +47,13 @@ describe('Weather API', function (){
         $('#current_city')
             .val("gothenburg,se")
             .trigger("change");
-        expect($('#city').html()).toEqual("Göteborg");
+        expect($('#city').html()).toEqual();
+    });
+
+    it('user chooses a city and the cities temperature and wind speed is shown', function(){
+       $('#search')
+           .val("stockholm,se")
+           .trigger("blur");
+        expect($('#search').html()).toEqual();
     });
 });

@@ -6,7 +6,7 @@ function updateDisplay() {
 }
 
 function getWeather(location, callback) {
-    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=metric';
+    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q={city name},{country code}' + location + '&units=metric';
     $.ajax({
         dataType: "jsonp",
         url: api_url,
@@ -25,6 +25,7 @@ function getWeatherForSelectedCity(location) {
 $(document).ready(function () {
     updateDisplay();
     getWeatherForSelectedCity($('#current_city').val());
+    getWeatherForSelectedCity($('#search').val());
 
     $('#increase').click(function () {
         thermostat.increaseTemperature(1);
@@ -51,4 +52,9 @@ $(document).ready(function () {
     $('#current_city').change(function () {
         getWeatherForSelectedCity($(this).val());
     });
+
+    $('#search').blur(function (){
+       getWeatherForSelectedCity($(this).val());
+    });
+
 });

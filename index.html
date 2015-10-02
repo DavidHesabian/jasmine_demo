@@ -1,5 +1,4 @@
 <!--<<!DOCTYPE html>-->
-<html>
 <head>
     <meta charset="utf-8">
     <title>Thermostat</title>
@@ -14,13 +13,16 @@
 <button id='reset'>Reset</button>
 
 <hr/>
+<input id="search" placeholder="Search">
+
+<p>Temperature in <span id="city"></span> is <span id="city_temp"></span> °C</p>
+<p>Wind is <span id="city_wind"></span> meter/sec</p>
+
 <select id="current_city">
     <option value="gothenburg,se">Göteborg</option>
     <option value="nassjo,se">Nässjö</option>
     <option value="stockholm,se">Stockholm</option>
 </select>
-<p>Temperature in <span id="city"></span> is <span id="city_temp"></span> °C</p>
-<p>Wind is <span id="city_wind"></span> meter/sec</p>
 
 <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 <script src='src/Thermostat.js'></script>
