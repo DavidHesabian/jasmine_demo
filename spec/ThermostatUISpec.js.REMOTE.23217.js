@@ -34,28 +34,11 @@ describe('ThermostatUI', function () {
         $('#change_mode').attr('checked', false);
         thermostat.powerSavingMode = false;
         thermostat.temperature = 32;
-<<<<<<< HEAD
-        $('#change_mode').each(function(){
-=======
         $('#change_mode').each(function () {
->>>>>>> 9c4ed7134241b663644e2b65966ffb68461c0e56
             $(this).prop('checked', status).click();
         });
         expect('#temperature').toContainText('25');
     });
-<<<<<<< HEAD
-
-});
-
-
-describe('City temperature', function () {
-
-    it('sets temperature to 21°C on city', function () {
-        thermostat.city = 21;
-        expect('#city').toEqual(21);
-    });
-});
-=======
 });
 
 describe('Weather API', function (){
@@ -74,4 +57,3 @@ describe('Weather API', function (){
         expect($('#search').html()).toEqual();
     });
 });
->>>>>>> 9c4ed7134241b663644e2b65966ffb68461c0e56
