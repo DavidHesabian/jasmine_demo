@@ -30,9 +30,27 @@ $(document).ready(function () {
         updateDisplay();
     });
 
-    $('#gothenburg_se').click(function () {
-        $('#temperature').prop('Göteborg', true);
-        thermostat.reset();
-        updateDisplay();
+    $('#current_city').change(function () {
+        getWeatherForSelectedCity($(this).val());
     });
+
+
 });
+
+function getWeather(location, callback) {
+
+    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=metric';
+
+    $.ajax({
+        dataType: "jsonp",
+        url: api_url,
+        success: callback
+    });
+}
+
+function getWeatherForSelectedCity(location) {
+    getWeather(location, function (response) {
+        $('#city').html(response.name);
+        $('#city_temp').html(response.main.temp);
+    });
+}

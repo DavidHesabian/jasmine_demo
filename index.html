@@ -14,14 +14,17 @@
 <button id='reset'>Reset</button>
 
 <hr/>
-<select id="city">
-    <option value="gothenburg_se">Göteborg</option>
-    <option value="nassjo_se">Nässjö</option>
+<select id="current_city">
+    <option value="gothenburg,se">Göteborg</option>
+    <option value="nassjo,se">Nässjö</option>
+    <option value="stockholm,se">Stockholm</option>
 </select>
+<p>Temperature <span id="city"></span> is <span id="city_temp"></span>°C</p>
 
 <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 <script src='src/Thermostat.js'></script>
 <script src='src/app.js'></script>
+<script src='src/WeatherAPI.js'></script>
 
 </body>
 </html>

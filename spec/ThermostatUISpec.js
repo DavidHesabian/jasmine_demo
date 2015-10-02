@@ -41,10 +41,12 @@ describe('ThermostatUI', function () {
     });
 });
 
-describe('set temperature to specific city', function() {
+describe('Weather API', function (){
 
-    it('set temperature to 21 degrees on gothenburg', function () {
-        $('#gothenburg_se').click();
-        expect('#temperature').toContainText('21');
+    it('sets the correct city value to gothenburg when selected from drop-down menu', function (){
+        $('#current_city')
+            .val("gothenburg,se")
+            .trigger("change");
+        expect($('#city').html()).toEqual("Göteborg");
     });
 });
