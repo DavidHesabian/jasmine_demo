@@ -34,4 +34,11 @@ $(document).ready(function () {
         thermostat.reset();
         updateDisplay();
     });
+
+    $('#city').click(function () {
+        $('#dubai').prop('checked', true);
+        thermostat.temperature(21);
+        updateDisplay();
+    });
+
 });

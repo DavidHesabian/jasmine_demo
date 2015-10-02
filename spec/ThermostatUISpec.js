@@ -39,4 +39,14 @@ describe('ThermostatUI', function () {
         });
         expect('#temperature').toContainText('25');
     });
+
+});
+
+
+describe('City temperature', function () {
+
+    it('sets temperature to 21°C on city', function () {
+        thermostat.city = 21;
+        expect('#city').toEqual(21);
+    });
 });
